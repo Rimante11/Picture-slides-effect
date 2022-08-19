@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+/*--Har lagd länken i html innan link css från font awesome, sen imorterat url från google fonts-*/
+
+body{
+  font-family: 'DynaPuff', cursive;
+}

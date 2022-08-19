@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+/*--Har lagd länken i html innan link css från font awesome, sen imorterat url från google fonts-*/
+
+body{
+  background-color: rgb(234, 228, 53);
+  display: flex; /*Alla elementer in the row*/
+  flex-direction: column; /*Alla elementer i kolum*/
+  align-items: center; /*pga det ör flex box, så centrerar vi elementer*/
+  justify-content: center; /*To center i center typ som circles center men för detta vi behöver height*/
+  height: 100vh; /*vh = vertical height*/
+  margin: 0; /*för att inte kunna skrolla eller browser inte ska läga extra scroll*/
+
+}
+
+h1{
+  /*Använder import google font*/
+  font-family: 'DynaPuff', cursive;
+  color: orangered;
+}

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+
+body{
+  background-color: rgb(77, 77, 59);
+  display: flex; /*Alla elementer in the row*/
+
+  align-items: center; /*pga det ör flex box, så centrerar vi elementer*/
+  justify-content: center; /*To center i center typ som circles center men för detta vi behöver height*/
+  height: 100vh; /*vh = vertical height*/
+  overflow: hidden; /*för att inte kunna skrolla eller browser inte ska läga extra scroll*/
+  margin: 0; 
+}
+
+h3{
+  font-family: 'Dosis', sans-serif;
+  color: rgb(18, 17, 16);
+}
+
+.container{
+  display: flex;
+  width: 90vw;
+}
+
+.panel{
+  background-size: auto 100%; /*viktig här kommatäcken efter auto, annars dubbleras bilderna flera gånger, men tog bort funkar som det ska efter lagt height 90vh*/
+  background-position: center; /*sätter bilderna to center i bildens ruta*/
+  background-repeat: no-repeat; /*att få inte upprepas*/  
+  height: 80vh; /*gör bilderna stora i läsaren, typ 80 vertical height*/
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 0.5; /*för att alla bilderna ska bli lika stora dvs even på engelska*/
+  margin: 10px; /*separera varandra, space i mellan*/
+  position: relative; /*pga texten i container dvs h3 text*/
+  transition: flex 0.7s ease-in; /*ease in är efekt*/
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute; /*darför innan vi gjort position relative*/
+  bottom: 20px;
+  left: 120px;
+  margin: 0;
+  opacity: 0; /**gömmer h3 text*/
+}
+
+/*men visa h3 text när det active*/
+.panel.active {
+  flex: 5; /*från 0.5 to 5*/
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s; /*att text kommer inte innan bilderna öppnas fullt*/
+}
+
+/*för small screen ta bort sista två bilderna att få mer plats och allt ska se ut mer snyggare och inte intryckt*/
+@media (max-width: 480px) {
+  .container{
+    width: 100vw;
+  }
+
+  /*ta bort eller göra osynliga sista bilderna*/
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
+
